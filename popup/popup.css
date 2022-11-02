@@ -1,0 +1,29 @@
+html,
+body {
+  width: 100px;
+  color:blueviolet;
+  background-color:yellow;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  margin: 3% auto;
+  padding: 4px;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.button:hover {
+  margin: 3% auto;
+  padding: 4px;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
