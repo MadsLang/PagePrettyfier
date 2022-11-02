@@ -4,7 +4,7 @@
     "version": "1.0",
   
     "description": "Adds a browser action icon to the toolbar. Click the button to justify text on page.",
-    "homepage_url": "https://github.com/madslangs",
+    "homepage_url": "https://github.com/MadsLang/PagePrettyfier",
     "icons": {
       "48": "icons/logo.png"
     },
