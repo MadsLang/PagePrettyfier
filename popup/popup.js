@@ -24,6 +24,12 @@ function listenForClicks() {
         });
     }
 
+    function cats(tabs) {
+        browser.tabs.sendMessage(tabs[0].id, {
+        command: "cats"
+        });
+    }
+
     /** 
      * send a "reset" message to the content script in the active tab.
      * But is does not do anything right now
@@ -56,6 +62,11 @@ function listenForClicks() {
     .query({ active: true, currentWindow: true })
     .then(fontify)
     .catch(reportError);
+    } else if (e.target.classList.contains("cats")) {
+        browser.tabs
+        .query({ active: true, currentWindow: true })
+        .then(cats)
+        .catch(reportError);
     } else if (e.target.classList.contains("reset")) {
     browser.tabs
     .query({ active: true, currentWindow: true })

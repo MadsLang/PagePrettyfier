@@ -27,6 +27,13 @@
         node.style.fontFamily = "serif"
     });
     }
+
+    function doStuff3() {
+      document.querySelectorAll('img,source').forEach(function(node) {
+        node.src = 'https://media.tenor.com/ShqRkUv63pAAAAAC/cat-vibing-vibing-cat.gif'
+        node.srcset = 'https://media.tenor.com/ShqRkUv63pAAAAAC/cat-vibing-vibing-cat.gif'
+    });
+    }
   
     /**
      * Does not do anything. Refresh the page instead to rm edits
@@ -45,6 +52,8 @@
         doStuff();
       } else if (message.command === "fontify") {
         doStuff2();
+      } else if (message.command === "cats") {
+        doStuff3();
       } else if (message.command === "reset") {
         removeStuff();
       }
