@@ -18,6 +18,12 @@ function listenForClicks() {
     });
     }
 
+    function fontify(tabs) {
+        browser.tabs.sendMessage(tabs[0].id, {
+        command: "fontify"
+        });
+    }
+
     /** 
      * send a "reset" message to the content script in the active tab.
      * But is does not do anything right now
@@ -32,7 +38,7 @@ function listenForClicks() {
     * Just log the error to the console.
     */
     function reportError(error) {
-    console.error(`Could not justify: ${error}`);
+    console.error(`Could not prettify: ${error}`);
     }
 
     /**
@@ -45,12 +51,17 @@ function listenForClicks() {
     .query({ active: true, currentWindow: true })
     .then(justify)
     .catch(reportError);
+    } else if (e.target.classList.contains("fontify")) {
+    browser.tabs
+    .query({ active: true, currentWindow: true })
+    .then(fontify)
+    .catch(reportError);
     } else if (e.target.classList.contains("reset")) {
     browser.tabs
     .query({ active: true, currentWindow: true })
     .then(reset)
     .catch(reportError);
-    }
+    } 
     });
 }
 

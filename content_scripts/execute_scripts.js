@@ -21,6 +21,12 @@
     /**
      * Add functions similar to doStuff here for more functions
      */
+
+    function doStuff2() {
+      document.querySelectorAll('[role=paragraph],p').forEach(function(node) {
+        node.style.fontFamily = "serif"
+    });
+    }
   
     /**
      * Does not do anything. Refresh the page instead to rm edits
@@ -37,6 +43,8 @@
     browser.runtime.onMessage.addListener((message) => {
       if (message.command === "justify") {
         doStuff();
+      } else if (message.command === "fontify") {
+        doStuff2();
       } else if (message.command === "reset") {
         removeStuff();
       }
