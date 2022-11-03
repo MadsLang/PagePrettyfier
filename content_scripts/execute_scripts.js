@@ -23,7 +23,7 @@
      */
 
     function doStuff2() {
-      document.querySelectorAll('[role=paragraph],p').forEach(function(node) {
+      document.querySelectorAll('[role=paragraph],p,h1,h2,h3,span').forEach(function(node) {
         node.style.fontFamily = "serif"
     });
     }
