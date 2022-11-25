@@ -36,6 +36,8 @@
     }
 
     function wordart() {
+      /* CSS for word-art taken from here: https://codepen.io/kathykato/pen/omxPap */
+
       var wordArtArray = [
         `
           h1 {
