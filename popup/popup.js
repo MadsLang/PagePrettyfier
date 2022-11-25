@@ -30,6 +30,12 @@ function listenForClicks() {
         });
     }
 
+    function word_art(tabs) {
+        browser.tabs.sendMessage(tabs[0].id, {
+        command: "wordart"
+        });
+    }
+
     /** 
      * send a "reset" message to the content script in the active tab.
      * But is does not do anything right now
@@ -66,6 +72,11 @@ function listenForClicks() {
         browser.tabs
         .query({ active: true, currentWindow: true })
         .then(cats)
+        .catch(reportError);
+    } else if (e.target.classList.contains("wordart")) {
+        browser.tabs
+        .query({ active: true, currentWindow: true })
+        .then(word_art)
         .catch(reportError);
     } else if (e.target.classList.contains("reset")) {
     browser.tabs
