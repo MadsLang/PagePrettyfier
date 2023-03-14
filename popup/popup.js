@@ -13,9 +13,9 @@ function listenForClicks() {
     * send a "justify" message to the content script in the active tab.
     */
     function justify(tabs) {
-    browser.tabs.sendMessage(tabs[0].id, {
-    command: "justify"
-    });
+        browser.tabs.sendMessage(tabs[0].id, {
+        command: "justify"
+        });
     }
 
     function fontify(tabs) {

@@ -157,7 +157,7 @@
      * If receiving "justify", it calls doStuff function.
      * Add other messages and corresponding function to add more functions
      */
-    browser.runtime.onMessage.addListener((message) => {
+    browser.runtime.onMessage.addListener((message) => {   
       if (message.command === "justify") {
         doStuff();
       } else if (message.command === "fontify") {
@@ -171,8 +171,8 @@
       }
     });
   })();
+
+
   
-
-
 
 
